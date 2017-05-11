@@ -65,26 +65,10 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        exclude: [
-          /components\/[A-z\/]*\.s?css/,
-          /views\/Iframe\/Iframe.scss/
-        ],
-        // loader: 'style-loader!css-loader!postcss-loader!sass-loader',
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: sassLoaders
         })
-      },
-      {
-        test: [
-          /components\/[A-z\/]*\.s?css/,
-          /views\/Iframe\/Iframe.scss/
-        ],
-        loader: 'css-loader!postcss-loader!sass-loader'
-      },
-      {
-        test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]',
       }
     ]
   },

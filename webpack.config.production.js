@@ -37,12 +37,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.scss'],
     alias: {
-      component: path.resolve('./node_modules/@lostmyname/components/lib'),
-      chameleon: path.resolve('./node_modules/chameleon-sass/assets/stylesheets'),
-      css: path.resolve('./node_modules/@lostmyname/css/scss'),
-      fonts: path.resolve('./node_modules/@lostmyname/css/fonts'),
       scss: path.resolve('./src/scss'),
-      helpers: path.resolve('./src/js/helpers')
+      images: path.resolve('./src/images'),
+      helpers: path.resolve('./src/js/helpers'),
+      quests: path.resolve('./src/js/quests')
     },
     modules: [
       path.join(__dirname, './'),
@@ -58,31 +56,18 @@ module.exports = {
         loaders: ['babel-loader']
       },
       {
-        test: /images\/.*\.svg$/i,
-        loader: 'svg-url-loader'
+        test: /\.(jpeg|jpg|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=10000'
+        ]
       },
       {
         test: /\.s?css$/,
-        exclude: [
-          /components\/[A-z\/]*\.s?css/,
-          /views\/Iframe\/Iframe.scss/
-        ],
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: sassLoaders
         })
       },
-      {
-        test: [
-          /components\/[A-z\/]*\.s?css/,
-          /views\/Iframe\/Iframe.scss/
-        ],
-        loader: 'css-loader!postcss-loader!sass-loader'
-      },
-      {
-        test: /fonts\/.*\.(woff|woff2|eot|ttf|svg)$/,
-        loader: 'file-loader?name=fonts/[name].[ext]',
-      }
     ]
   },
   plugins: [
