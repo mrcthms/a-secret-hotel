@@ -1,1 +1,1 @@
-# Lost My Name Design System
+# A Secret Hotel
