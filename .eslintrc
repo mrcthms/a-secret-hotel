@@ -1,0 +1,10 @@
+{
+  "extends": "lmn",
+
+  "ecmaFeatures": {
+    "blockBindings": true
+  },
+  "rules": {
+    "max-len": 0
+  }
+}

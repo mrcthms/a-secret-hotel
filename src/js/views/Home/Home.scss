@@ -1,0 +1,14 @@
+@import "~chameleon/helpers/box";
+@import "~css/utilities/aesthetic";
+@import "~css/type";
+@import "~css/palette";
+
+.goals {
+  @extend %padded-big;
+  @extend %rounded;
+  @extend %shadowed;
+
+  p {
+    @extend %font-serif;
+  }
+}
