@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 .wrap {
   margin: 0;
   padding: 40px;
@@ -27,8 +31,10 @@ body {
 }
 
 .title {
+  font-family: "old-man-eloquent";
   display: inline-block;
-  font-size: 32px;
+  font-size: 48px;
+  line-height: 30px;
   color: #F2F5F6;
   font-weight: normal;
   margin: 0;
@@ -66,4 +72,14 @@ body {
 
 .copy p {
   margin: 0;
+}
+
+@media (max-width: 480px) {
+  .phonetic {
+    margin-left: 0;
+    margin-top: 16px;
+    display: block;
+    top: 0;
+  }
+
 }
